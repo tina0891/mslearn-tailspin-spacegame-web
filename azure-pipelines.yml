@@ -18,9 +18,9 @@ variables:
 
 steps:
 - task: UseDotNet@2
-   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
+  displayName: 'Use .NET SDK $(dotnetSdkVersion)'
   inputs:
- version: '$(dotnetSdkVersion)'
+    version: '$(dotnetSdkVersion)'
 
 - task: Npm@1
   displayName: 'Run npm install'
@@ -56,7 +56,7 @@ steps:
     command: 'publish'
     projects: '**/*.csproj'
     publishWebProjects: false
-  arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+    arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
